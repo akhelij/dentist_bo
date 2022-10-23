@@ -12,7 +12,7 @@ trait KeepTrace
     protected static function bootKeepTrace()
     {
         static::creating(function($model) {
-            $model->created_by = auth()->user()->id;
+            $model->created_by = auth()->user()?->id;
         });
 
         static::updating(function($model) {
