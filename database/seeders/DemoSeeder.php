@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Client;
+use App\Models\Patient;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Tenant;
@@ -38,7 +38,7 @@ class DemoSeeder extends Seeder
                 'role' => 'staff'
             ]);
 
-            Client::factory(20)->create();        
+            Patient::factory(20)->create();        
         }
 
         auth()->loginUsingId($admin->id);

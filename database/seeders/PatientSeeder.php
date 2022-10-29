@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Client;
+use App\Models\Patient;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ClientSeeder extends Seeder
+class PatientSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,6 @@ class ClientSeeder extends Seeder
      */
     public function run()
     {
-        Client::factory(50)->create();
+        Patient::factory(50)->create();
     }
 }
