@@ -29,4 +29,14 @@ class Intervention extends Model
         'updated_by',
         'deleted_by'
     ];
+
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class);
+    }
+
+    public function payments()
+    {
+       return $this->hasMany(Payment::class);
+    }
 }
