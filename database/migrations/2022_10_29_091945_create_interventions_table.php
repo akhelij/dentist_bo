@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('interventions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('patient_id')->constrained();
-            $table->json('dents')->nullable();
             $table->string('description')->nullable();
             $table->float('total_amount')->nullable();
             $table->unsignedBigInteger('tenant_id')->index();

@@ -19,7 +19,6 @@ class InterventionFactory extends Factory
     {
         return [
             'patient_id' => Patient::factory()->create()->id,
-            'dents' => json_encode(fake()->randomDigit(1, 32)),
             'description' => fake()->text(),
             'total_amount' => fake()->randomFloat(2,50, 699),
         ];

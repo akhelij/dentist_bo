@@ -21,7 +21,6 @@ class Intervention extends Model
      */
     protected $fillable = [
         'patient_id',
-        'dents',
         'descriptions',
         'total_amount',
         'tenant_id',
@@ -38,5 +37,10 @@ class Intervention extends Model
     public function payments()
     {
        return $this->hasMany(Payment::class);
+    }
+    
+    public function history()
+    {
+       return $this->hasMany(InterventionHistory::class);
     }
 }

@@ -27,7 +27,6 @@ class InterventionRequest extends FormRequest
     {
         return [
             'patient_id' => 'numeric|exists:patients,id',
-            'dents' => 'json',
             'total_amount' => 'numeric',
         ];
     }
@@ -35,7 +34,6 @@ class InterventionRequest extends FormRequest
     public function updateOrCreate(Intervention $intervention)
     {
         $intervention->patient_id = $this->patient_id;
-        $intervention->dents = $this->dents;
         $intervention->description = $this->description;
         $intervention->total_amount = $this->total_amount;
 
