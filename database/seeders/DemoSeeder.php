@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Intervention;
+use App\Models\InterventionHistory;
 use App\Models\Patient;
 use App\Models\Payment;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -43,16 +44,21 @@ class DemoSeeder extends Seeder
             $patients = Patient::factory(20)->create(); 
 
             foreach($patients as $patient) {
-                $interventions = Intervention::factory(5)->create([
+                $intervention = Intervention::factory()->create([
                     'patient_id' => $patient->id
                 ]);
 
-                foreach($interventions as $intervention) {
-                    Payment::factory()->create([
-                        'intervention_id' => $intervention->id,
-                        'amount' => fake()->randomFloat(2, 0, $intervention->total_amount ?? 0)
-                    ]);
-                }
+                InterventionHistory::factory(3)->create(
+                    [                        
+                        'intervention_id' => $intervention->id
+                    ]
+                );
+
+                Payment::factory(3)->create([
+                    'intervention_id' => $intervention->id,
+                    'amount' =>  $intervention->total_amount / 3
+                ]);
+                
             }
 
 
