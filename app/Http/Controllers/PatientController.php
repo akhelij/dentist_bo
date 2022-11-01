@@ -69,7 +69,7 @@ class PatientController extends Controller
      */
     public function update(PatientRequest $request, Patient $patient)
     {
-        return $request->updateOrCreate(new Patient());
+        return $request->updateOrCreate($patient);
     }
 
     /**
