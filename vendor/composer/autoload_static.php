@@ -81,8 +81,10 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\LaravelPackageTools\\' => 27,
             'Spatie\\LaravelIgnition\\' => 23,
             'Spatie\\Ignition\\' => 16,
+            'Spatie\\HttpLogger\\' => 18,
             'Spatie\\FlareClient\\' => 19,
             'Spatie\\Backtrace\\' => 17,
         ),
@@ -90,6 +92,7 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
         array (
             'Ramsey\\Uuid\\' => 12,
             'Ramsey\\Collection\\' => 18,
+            'Rakutentech\\LaravelRequestDocs\\' => 31,
         ),
         'P' => 
         array (
@@ -122,6 +125,10 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
             'Laravel\\Sanctum\\' => 16,
             'Laravel\\Sail\\' => 13,
             'Laravel\\Breeze\\' => 15,
+        ),
+        'K' => 
+        array (
+            'KitLoong\\AppLogger\\' => 19,
         ),
         'I' => 
         array (
@@ -303,6 +310,10 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Spatie\\LaravelPackageTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-package-tools/src',
+        ),
         'Spatie\\LaravelIgnition\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/laravel-ignition/src',
@@ -310,6 +321,10 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
         'Spatie\\Ignition\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/ignition/src',
+        ),
+        'Spatie\\HttpLogger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-http-logger/src',
         ),
         'Spatie\\FlareClient\\' => 
         array (
@@ -326,6 +341,10 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
         'Ramsey\\Collection\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/collection/src',
+        ),
+        'Rakutentech\\LaravelRequestDocs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rakutentech/laravel-request-docs/src',
         ),
         'Psy\\' => 
         array (
@@ -407,6 +426,10 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
         'Laravel\\Breeze\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/breeze/src',
+        ),
+        'KitLoong\\AppLogger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src',
         ),
         'Illuminate\\Support\\' => 
         array (
@@ -512,10 +535,21 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
+        'App\\Http\\Controllers\\Auth\\EmailVerificationNotificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/EmailVerificationNotificationController.php',
+        'App\\Http\\Controllers\\Auth\\NewPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/NewPasswordController.php',
+        'App\\Http\\Controllers\\Auth\\PasswordResetLinkController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/PasswordResetLinkController.php',
+        'App\\Http\\Controllers\\Auth\\RegisteredUserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisteredUserController.php',
+        'App\\Http\\Controllers\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerifyEmailController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\InterventionController' => __DIR__ . '/../..' . '/app/Http/Controllers/InterventionController.php',
+        'App\\Http\\Controllers\\InterventionHistoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/InterventionHistoryController.php',
+        'App\\Http\\Controllers\\PatientController' => __DIR__ . '/../..' . '/app/Http/Controllers/PatientController.php',
+        'App\\Http\\Controllers\\PaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/PaymentController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\EnsureEmailIsVerified' => __DIR__ . '/../..' . '/app/Http/Middleware/EnsureEmailIsVerified.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
@@ -523,12 +557,28 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
+        'App\\Http\\Requests\\InterventionHistoryRequest' => __DIR__ . '/../..' . '/app/Http/Requests/InterventionHistoryRequest.php',
+        'App\\Http\\Requests\\InterventionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/InterventionRequest.php',
+        'App\\Http\\Requests\\PatientRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PatientRequest.php',
+        'App\\Http\\Requests\\PaymentRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PaymentRequest.php',
+        'App\\Listeners\\SetIdTenantInSession' => __DIR__ . '/../..' . '/app/Listeners/SetIdTenantInSession.php',
+        'App\\Models\\Cabinet' => __DIR__ . '/../..' . '/app/Models/Cabinet.php',
+        'App\\Models\\Intervention' => __DIR__ . '/../..' . '/app/Models/Intervention.php',
+        'App\\Models\\InterventionHistory' => __DIR__ . '/../..' . '/app/Models/InterventionHistory.php',
+        'App\\Models\\Patient' => __DIR__ . '/../..' . '/app/Models/Patient.php',
+        'App\\Models\\Payment' => __DIR__ . '/../..' . '/app/Models/Payment.php',
+        'App\\Models\\Tenant' => __DIR__ . '/../..' . '/app/Models/Tenant.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Policies\\PatientPolicy' => __DIR__ . '/../..' . '/app/Policies/PatientPolicy.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Scopes\\TenantScope' => __DIR__ . '/../..' . '/app/Scopes/TenantScope.php',
+        'App\\Traits\\BelongsToTenant' => __DIR__ . '/../..' . '/app/Traits/BelongsToTenant.php',
+        'App\\Traits\\KeepTrace' => __DIR__ . '/../..' . '/app/Traits/KeepTrace.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
@@ -635,8 +685,17 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
         'Cron\\HoursField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/HoursField.php',
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
+        'Database\\Factories\\InterventionFactory' => __DIR__ . '/../..' . '/database/factories/InterventionFactory.php',
+        'Database\\Factories\\InterventionHistoryFactory' => __DIR__ . '/../..' . '/database/factories/InterventionHistoryFactory.php',
+        'Database\\Factories\\PatientFactory' => __DIR__ . '/../..' . '/database/factories/PatientFactory.php',
+        'Database\\Factories\\PaymentFactory' => __DIR__ . '/../..' . '/database/factories/PaymentFactory.php',
+        'Database\\Factories\\TenantFactory' => __DIR__ . '/../..' . '/database/factories/TenantFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\DemoSeeder' => __DIR__ . '/../..' . '/database/seeders/DemoSeeder.php',
+        'Database\\Seeders\\InterventionSeeder' => __DIR__ . '/../..' . '/database/seeders/InterventionSeeder.php',
+        'Database\\Seeders\\PatientSeeder' => __DIR__ . '/../..' . '/database/seeders/PatientSeeder.php',
+        'Database\\Seeders\\PaymentSeeder' => __DIR__ . '/../..' . '/database/seeders/PaymentSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -2639,6 +2698,20 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'KitLoong\\AppLogger\\AppLoggerServiceProvider' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/AppLoggerServiceProvider.php',
+        'KitLoong\\AppLogger\\HttpLog\\HttpLogProfile' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/HttpLog/HttpLogProfile.php',
+        'KitLoong\\AppLogger\\HttpLog\\HttpLogWriter' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/HttpLog/HttpLogWriter.php',
+        'KitLoong\\AppLogger\\HttpLog\\LogProfile' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/HttpLog/LogProfile.php',
+        'KitLoong\\AppLogger\\HttpLog\\LogWriter' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/HttpLog/LogWriter.php',
+        'KitLoong\\AppLogger\\Middlewares\\AppLogger' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/Middlewares/AppLogger.php',
+        'KitLoong\\AppLogger\\PerformanceLog\\LogProfile' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/PerformanceLog/LogProfile.php',
+        'KitLoong\\AppLogger\\PerformanceLog\\LogWriter' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/PerformanceLog/LogWriter.php',
+        'KitLoong\\AppLogger\\PerformanceLog\\PerformanceLogProfile' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/PerformanceLog/PerformanceLogProfile.php',
+        'KitLoong\\AppLogger\\PerformanceLog\\PerformanceLogWriter' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/PerformanceLog/PerformanceLogWriter.php',
+        'KitLoong\\AppLogger\\QueryLog\\LogProfile' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/QueryLog/LogProfile.php',
+        'KitLoong\\AppLogger\\QueryLog\\LogWriter' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/QueryLog/LogWriter.php',
+        'KitLoong\\AppLogger\\QueryLog\\QueryLogProfile' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/QueryLog/QueryLogProfile.php',
+        'KitLoong\\AppLogger\\QueryLog\\QueryLogWriter' => __DIR__ . '/..' . '/kitloong/laravel-app-logger/src/QueryLog/QueryLogWriter.php',
         'Laravel\\Breeze\\BreezeServiceProvider' => __DIR__ . '/..' . '/laravel/breeze/src/BreezeServiceProvider.php',
         'Laravel\\Breeze\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallCommand.php',
         'Laravel\\Breeze\\Console\\InstallsApiStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsApiStack.php',
@@ -4227,6 +4300,13 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
         'Psy\\VersionUpdater\\GitHubChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/GitHubChecker.php',
         'Psy\\VersionUpdater\\IntervalChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/IntervalChecker.php',
         'Psy\\VersionUpdater\\NoopChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/NoopChecker.php',
+        'Rakutentech\\LaravelRequestDocs\\Commands\\LaravelRequestDocsCommand' => __DIR__ . '/..' . '/rakutentech/laravel-request-docs/src/Commands/LaravelRequestDocsCommand.php',
+        'Rakutentech\\LaravelRequestDocs\\Controllers\\LaravelRequestDocsController' => __DIR__ . '/..' . '/rakutentech/laravel-request-docs/src/Controllers/LaravelRequestDocsController.php',
+        'Rakutentech\\LaravelRequestDocs\\LaravelRequestDocs' => __DIR__ . '/..' . '/rakutentech/laravel-request-docs/src/LaravelRequestDocs.php',
+        'Rakutentech\\LaravelRequestDocs\\LaravelRequestDocsFacade' => __DIR__ . '/..' . '/rakutentech/laravel-request-docs/src/LaravelRequestDocsFacade.php',
+        'Rakutentech\\LaravelRequestDocs\\LaravelRequestDocsMiddleware' => __DIR__ . '/..' . '/rakutentech/laravel-request-docs/src/LaravelRequestDocsMiddleware.php',
+        'Rakutentech\\LaravelRequestDocs\\LaravelRequestDocsServiceProvider' => __DIR__ . '/..' . '/rakutentech/laravel-request-docs/src/LaravelRequestDocsServiceProvider.php',
+        'Rakutentech\\LaravelRequestDocs\\LaravelRequestDocsToOpenApi' => __DIR__ . '/..' . '/rakutentech/laravel-request-docs/src/LaravelRequestDocsToOpenApi.php',
         'Ramsey\\Collection\\AbstractArray' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractArray.php',
         'Ramsey\\Collection\\AbstractCollection' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractCollection.php',
         'Ramsey\\Collection\\AbstractSet' => __DIR__ . '/..' . '/ramsey/collection/src/AbstractSet.php',
@@ -4613,6 +4693,12 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
         'Spatie\\FlareClient\\Truncation\\TrimStringsStrategy' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Truncation/TrimStringsStrategy.php',
         'Spatie\\FlareClient\\Truncation\\TruncationStrategy' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Truncation/TruncationStrategy.php',
         'Spatie\\FlareClient\\View' => __DIR__ . '/..' . '/spatie/flare-client-php/src/View.php',
+        'Spatie\\HttpLogger\\DefaultLogWriter' => __DIR__ . '/..' . '/spatie/laravel-http-logger/src/DefaultLogWriter.php',
+        'Spatie\\HttpLogger\\HttpLoggerServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-http-logger/src/HttpLoggerServiceProvider.php',
+        'Spatie\\HttpLogger\\LogNonGetRequests' => __DIR__ . '/..' . '/spatie/laravel-http-logger/src/LogNonGetRequests.php',
+        'Spatie\\HttpLogger\\LogProfile' => __DIR__ . '/..' . '/spatie/laravel-http-logger/src/LogProfile.php',
+        'Spatie\\HttpLogger\\LogWriter' => __DIR__ . '/..' . '/spatie/laravel-http-logger/src/LogWriter.php',
+        'Spatie\\HttpLogger\\Middlewares\\HttpLogger' => __DIR__ . '/..' . '/spatie/laravel-http-logger/src/Middlewares/HttpLogger.php',
         'Spatie\\Ignition\\Config\\FileConfigManager' => __DIR__ . '/..' . '/spatie/ignition/src/Config/FileConfigManager.php',
         'Spatie\\Ignition\\Config\\IgnitionConfig' => __DIR__ . '/..' . '/spatie/ignition/src/Config/IgnitionConfig.php',
         'Spatie\\Ignition\\Contracts\\BaseSolution' => __DIR__ . '/..' . '/spatie/ignition/src/Contracts/BaseSolution.php',
@@ -4714,6 +4800,10 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
         'Spatie\\LaravelIgnition\\Support\\StringComparator' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Support/StringComparator.php',
         'Spatie\\LaravelIgnition\\Views\\BladeSourceMapCompiler' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Views/BladeSourceMapCompiler.php',
         'Spatie\\LaravelIgnition\\Views\\ViewExceptionMapper' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Views/ViewExceptionMapper.php',
+        'Spatie\\LaravelPackageTools\\Commands\\InstallCommand' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Commands/InstallCommand.php',
+        'Spatie\\LaravelPackageTools\\Exceptions\\InvalidPackage' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Exceptions/InvalidPackage.php',
+        'Spatie\\LaravelPackageTools\\Package' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Package.php',
+        'Spatie\\LaravelPackageTools\\PackageServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/PackageServiceProvider.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Attribute\\AsCommand' => __DIR__ . '/..' . '/symfony/console/Attribute/AsCommand.php',
@@ -5611,7 +5701,12 @@ class ComposerStaticInit5a121f2db0b644c272d486328f7f85c1
         'Termwind\\ValueObjects\\Style' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Style.php',
         'Termwind\\ValueObjects\\Styles' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Styles.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
+        'Tests\\Feature\\Auth\\AuthenticationTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/AuthenticationTest.php',
+        'Tests\\Feature\\Auth\\EmailVerificationTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/EmailVerificationTest.php',
+        'Tests\\Feature\\Auth\\PasswordResetTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/PasswordResetTest.php',
+        'Tests\\Feature\\Auth\\RegistrationTest' => __DIR__ . '/../..' . '/tests/Feature/Auth/RegistrationTest.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
+        'Tests\\Feature\\TenantScopeTest' => __DIR__ . '/../..' . '/tests/Feature/TenantScopeTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
