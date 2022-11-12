@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Controllers\InterventionHistoryController;
 use App\Models\Intervention;
 use App\Models\Patient;
 use Illuminate\Foundation\Http\FormRequest;
@@ -28,6 +29,7 @@ class InterventionRequest extends FormRequest
         return [
             'patient_id' => 'numeric|exists:patients,id',
             'total_amount' => 'numeric',
+            'history'   => 'sometimes'
         ];
     }
 
@@ -36,7 +38,13 @@ class InterventionRequest extends FormRequest
         $intervention->patient_id = $this->patient_id;
         $intervention->description = $this->description;
         $intervention->total_amount = $this->total_amount;
+        $intervention->save();
+        if($this->history)
+        {
+            $this->history->intervention_id = $intervention->id();
+            InterventionHistoryController::store($this->history);
+        }
 
-        return $intervention->save();
+        return $intervention;
     }
 }
