@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class InterventionHistory extends Model
 {
-    use HasFactory, SoftDeletes;    
+    use HasFactory, SoftDeletes;
     use BelongsToTenant, KeepTrace;
 
      /**
@@ -18,9 +18,9 @@ class InterventionHistory extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = [        
+    protected $fillable = [
         'intervention_id',
-        'tooth',
+        'teeth',
         'descriptions',
         'tenant_id',
         'created_by',

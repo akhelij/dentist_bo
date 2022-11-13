@@ -19,7 +19,7 @@ class InterventionHistoryFactory extends Factory
     {
         return [
             'intervention_id' => Intervention::factory()->create()->id,
-            'tooth' => json_encode(fake()->randomDigit(1, 32)),
+            'teeth' => json_encode(fake()->randomDigit(1, 32)),
             'description' => fake()->text()
         ];
     }

@@ -15,16 +15,15 @@ class InterventionHistoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'patient_id' => 'numeric|exists:patients,id',
-            'tooths' => 'json',
-            'total_amount' => 'numeric',
+            'intervention_id' => 'numeric|exists:patients,id',
+            'teeth' => 'json',
         ];
     }
 
     public function updateOrCreate(InterventionHistory $history)
     {
         $history->intervention_id = $this->intervention_id;
-        $history->tooths = $this->tooth;
+        $history->teeth = $this->teeth;
         $history->description = $this->description;
 
         return $history->save();

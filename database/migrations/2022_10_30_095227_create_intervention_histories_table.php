@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('intervention_histories', function (Blueprint $table) {
-            $table->id();            
+            $table->id();
             $table->foreignId('intervention_id')->constrained();
-            $table->json('tooth')->nullable();
+            $table->json('teeth')->nullable();
             $table->string('description')->nullable();
             $table->unsignedBigInteger('tenant_id')->index();
             $table->unsignedBigInteger('created_by')->nullable();
