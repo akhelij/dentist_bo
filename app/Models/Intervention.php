@@ -10,14 +10,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Intervention extends Model
 {
-    use HasFactory, SoftDeletes;    
+    use HasFactory, SoftDeletes;
     use BelongsToTenant, KeepTrace;
 
      /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>'
-     * 
+     *
      */
     protected $fillable = [
         'patient_id',
@@ -30,7 +30,7 @@ class Intervention extends Model
     ];
 
     protected $hidden = ['tenant_id'];
-    
+
     protected $with = ['history'];
 
     public function patient()
@@ -40,11 +40,11 @@ class Intervention extends Model
 
     public function payments()
     {
-       return $this->hasMany(Payment::class);
+       return $this->hasMany(Payment::class)->orderby('id','desc');
     }
-    
+
     public function history()
     {
-       return $this->hasMany(InterventionHistory::class);
+       return $this->hasMany(InterventionHistory::class)->orderby('id','desc');
     }
 }
