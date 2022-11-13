@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Patient extends Model
 {
-    use HasFactory, SoftDeletes;    
+    use HasFactory, SoftDeletes;
     use BelongsToTenant, KeepTrace;
 
      /**
@@ -33,6 +33,6 @@ class Patient extends Model
 
     public function interventions()
     {
-        return $this->hasMany(Intervention::class);
+        return $this->hasMany(Intervention::class)->orderby('id','desc');
     }
 }
