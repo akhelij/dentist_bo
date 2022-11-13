@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\BelongsToTenant;
 use App\Traits\KeepTrace;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -32,6 +33,20 @@ class Intervention extends Model
     protected $hidden = ['tenant_id'];
 
     protected $with = ['history', 'patient'];
+
+    protected $appends = ['last_updated_at'];
+
+    /**
+     * Get the user's first name.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function lastUpdatedAt(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => $this?->history?->first()->updated_at,
+        );
+    }
 
     public function patient()
     {
