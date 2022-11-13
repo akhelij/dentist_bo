@@ -39,12 +39,15 @@ class InterventionRequest extends FormRequest
         $intervention->description = $this->description;
         $intervention->total_amount = $this->total_amount;
         $intervention->save();
+        
         if($this->history)
-        {
-            $this->history->intervention_id = $intervention->id();
-            InterventionHistoryController::store($this->history);
+        { 
+          $history = $this->history;
+          $history["intervention_id"] = $intervention->id;
+          
+          (new InterventionHistoryController())->store(new InterventionHistoryRequest($history));
         }
 
-        return $intervention;
+        return Intervention::find($intervention->id);
     }
 }

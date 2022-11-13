@@ -23,7 +23,7 @@ class InterventionHistoryRequest extends FormRequest
     public function updateOrCreate(InterventionHistory $history)
     {
         $history->intervention_id = $this->intervention_id;
-        $history->teeth = $this->teeth;
+        $history->teeth = json_encode($this->teeth);
         $history->description = $this->description;
 
         return $history->save();

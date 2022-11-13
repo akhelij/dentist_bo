@@ -29,6 +29,8 @@ class Intervention extends Model
         'deleted_by'
     ];
 
+    protected $hidden = ['tenant_id'];
+    
     protected $with = ['history'];
 
     public function patient()
