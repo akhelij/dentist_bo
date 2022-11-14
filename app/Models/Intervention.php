@@ -32,7 +32,7 @@ class Intervention extends Model
 
     protected $hidden = ['tenant_id'];
 
-    protected $with = ['history', 'patient'];
+    protected $with = ['history'];
 
     protected $appends = ['last_updated_at'];
 
