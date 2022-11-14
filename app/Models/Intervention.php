@@ -44,7 +44,7 @@ class Intervention extends Model
     protected function lastUpdatedAt(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => $this?->history?->first()->updated_at,
+            get: fn ($value) => $this->history?->first()?->updated_at,
         );
     }
 
