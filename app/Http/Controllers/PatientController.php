@@ -44,9 +44,12 @@ class PatientController extends Controller
      * @param  \App\Models\Patient  $patient
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Patient $patient)
     {
-        return Patient::with('interventions')->find($id);
+        return [
+            'patient' => $patient,
+            'interventions' => $patient->interventions
+        ];
     }
 
     /**
