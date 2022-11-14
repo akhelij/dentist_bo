@@ -14,7 +14,7 @@ class PatientController extends Controller
      */
     public function index()
     {
-        return Patient::all();
+        return Patient::orderby('id', 'Desc')->paginate(25);
     }
 
     /**
@@ -46,7 +46,7 @@ class PatientController extends Controller
      */
     public function show(Patient $patient)
     {
-        return $patient;
+        return Patient::with('interventions')->find($patient->id);
     }
 
     /**
