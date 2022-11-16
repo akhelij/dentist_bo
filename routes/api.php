@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InterventionHistoryController;
 use App\Http\Controllers\InterventionController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\PaymentController;
@@ -27,7 +28,6 @@ Route::apiResource('/{patient}/interventions', InterventionController::class)->o
 Route::apiResource('/interventions', InterventionController::class)->except('index', 'store', 'update');
 Route::apiResource('/{intervention}/history',InterventionHistoryController::class)->only('index', 'store', 'update');
 Route::apiResource('/history', InterventionHistoryController::class)->except('index', 'store', 'update');
-;
 Route::apiResource('/{intervention}/payments', PaymentController::class)->only('index', 'store', 'update');
 Route::apiResource('/payments', PaymentController::class)->except('index', 'store', 'update');
 
