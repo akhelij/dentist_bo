@@ -15,7 +15,7 @@ class InterventionHistoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'intervention_id' => 'numeric|exists:patients,id',
+            'intervention_id' => 'numeric|exists:interventions,id',
             'teeth' => 'json',
         ];
     }
