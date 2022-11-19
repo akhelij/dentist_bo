@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InterventionHistoryController;
 use App\Http\Controllers\InterventionController;
 use App\Http\Controllers\PatientController;
@@ -23,6 +24,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/patients/all', [PatientController::class, 'all']);
 Route::apiResource('/patients', PatientController::class);
 Route::apiResource('/{patient}/interventions', InterventionController::class)->only('index', 'store', 'update');
