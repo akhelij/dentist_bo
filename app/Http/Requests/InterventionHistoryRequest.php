@@ -16,7 +16,7 @@ class InterventionHistoryRequest extends FormRequest
     {
         return [
             'intervention_id' => 'numeric|exists:interventions,id',
-            'teeth' => 'json',
+            'teeth' => 'array',
         ];
     }
 
