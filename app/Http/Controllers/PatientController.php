@@ -24,7 +24,7 @@ class PatientController extends Controller
      */
     public function all()
     {
-        return Patient::orderby('id', 'name')->pluck('id', 'name')->get();
+        return Patient::orderby('id', 'desc')->get(['id', 'name']);
     }
 
     /**
