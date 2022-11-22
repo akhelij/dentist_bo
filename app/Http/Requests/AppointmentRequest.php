@@ -27,7 +27,7 @@ class AppointmentRequest extends FormRequest
     {
         return [
             'patient_id' => 'numeric|exists:patients,id',
-            'date' => 'required|datetime'
+            'date' => 'required|date'
         ];
     }
 
