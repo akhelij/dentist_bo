@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InterventionHistoryController;
 use App\Http\Controllers\InterventionController;
@@ -33,4 +34,5 @@ Route::apiResource('/{intervention}/history',InterventionHistoryController::clas
 Route::apiResource('/history', InterventionHistoryController::class)->except('index');
 Route::apiResource('/{intervention}/payments', PaymentController::class)->only('index');
 Route::apiResource('/payments', PaymentController::class)->except('index');
+Route::apiResource('/appointment', AppointmentController::class);
 
