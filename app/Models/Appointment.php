@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\BelongsToTenant;
 use App\Traits\KeepTrace;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,4 +25,20 @@ class Appointment extends Model
         'created_by',
         'updated_by'
     ];
+
+    protected $hidden = [
+        'tenant_id',
+        'created_by',
+        'updated_by'
+    ];
+
+    protected $with = ['patient'];
+
+
+
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class);
+    }
+
 }
