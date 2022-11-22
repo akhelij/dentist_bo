@@ -34,5 +34,5 @@ Route::apiResource('/{intervention}/history',InterventionHistoryController::clas
 Route::apiResource('/history', InterventionHistoryController::class)->except('index');
 Route::apiResource('/{intervention}/payments', PaymentController::class)->only('index');
 Route::apiResource('/payments', PaymentController::class)->except('index');
-Route::apiResource('/appointment', AppointmentController::class);
+Route::apiResource('/appointments', AppointmentController::class);
 
