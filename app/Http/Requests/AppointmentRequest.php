@@ -33,7 +33,7 @@ class AppointmentRequest extends FormRequest
 
     public function updateOrCreate(Appointment $appointment)
     {
-        $appointment->patient_id = $this->name;
+        $appointment->patient_id = $this->patient_id;
         $appointment->date = $this->date;
 
         $appointment->save();
