@@ -16,11 +16,11 @@ trait KeepTrace
         });
 
         static::updating(function($model) {
-            $model->updated_by = auth()->user()->id;
+            $model->updated_by = auth()->user()?->id;
         });
-        
+
         static::deleting(function($model) {
-            $model->deleted_by = auth()->user()->id;
+            $model->deleted_by = auth()->user()?->id;
         });
     }
 }
