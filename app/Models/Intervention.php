@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Traits\BelongsToTenant;
+use App\Traits\CascadesDeletes;
 use App\Traits\KeepTrace;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,6 +14,7 @@ class Intervention extends Model
 {
     use HasFactory, SoftDeletes;
     use BelongsToTenant, KeepTrace;
+    use CascadesDeletes;
 
      /**
      * The attributes that are mass assignable.
@@ -33,6 +35,8 @@ class Intervention extends Model
     protected $hidden = ['tenant_id'];
 
     protected $with = ['history', 'payments'];
+
+    protected $cascadeDeletes = ['history', 'payments'];
 
     protected $appends = ['last_updated_at', 'paid'];
 

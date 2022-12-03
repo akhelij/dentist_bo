@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Payment extends Model
 {
-    use HasFactory, SoftDeletes;    
+    use HasFactory, SoftDeletes;
     use BelongsToTenant, KeepTrace;
 
      /**
@@ -27,7 +27,6 @@ class Payment extends Model
         'deleted_by'
     ];
 
-    
     public function intervention()
     {
         return $this->belongsTo(Intervention::class);
