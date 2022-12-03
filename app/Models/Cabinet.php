@@ -16,10 +16,10 @@ class Cabinet extends Model
     protected $fillable = [
         'name',
         'phone',
-        'loation',
+        'location',
         'email',
         'website',
-        'tanant_id',
+        'tenant_id',
         'created_by',
         'updated_by',
         'deleted_by'
