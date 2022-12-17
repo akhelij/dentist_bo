@@ -28,8 +28,8 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/patients/all', [PatientController::class, 'all']);
 Route::apiResource('/patients', PatientController::class);
-Route::apiResource('/{patient}/interventions', InterventionController::class)->only('index', 'store', 'update');
-Route::apiResource('/interventions', InterventionController::class)->except('index', 'store', 'update');
+Route::apiResource('/{patient}/interventions', InterventionController::class)->only('index', 'store');
+Route::apiResource('/interventions', InterventionController::class)->except('index', 'store');
 Route::apiResource('/{intervention}/history',InterventionHistoryController::class)->only('index');
 Route::apiResource('/history', InterventionHistoryController::class)->except('index');
 Route::apiResource('/{intervention}/payments', PaymentController::class)->only('index');
