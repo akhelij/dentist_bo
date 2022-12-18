@@ -27,7 +27,7 @@ class DashboardController extends Controller
         return [
             'patients_count' => Patient::count(),
             'interventions_count' => Intervention::count(),
-            'today_appointments' => Appointment::whereDate('date', today())->get(),
+            'today_appointments' => Appointment::whereDate('date', today())->with('patient')->get(),
             'appointments_count' => Appointment::count(),
             'payments_total' => Payment::all()->sum('amount'),
             'chart' => $chart
