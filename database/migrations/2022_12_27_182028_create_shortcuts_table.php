@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('shortcuts', function (Blueprint $table) {
             $table->id();
             $table->string('shortcut_content');
+            $table->string('type');
             $table->unsignedBigInteger('tenant_id')->index();
         });
     }

@@ -37,6 +37,7 @@ class ShortcutController extends Controller
     {
         $shortcut = new Shortcut();
         $shortcut->shortcut_content = $request->shortcut_content;
+        $shortcut->type = $request->type;
 
         return $shortcut->save();
     }
