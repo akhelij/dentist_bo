@@ -9,6 +9,7 @@ use App\Models\Patient;
 use App\Models\Payment;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class DashboardController extends Controller
 {
@@ -34,4 +35,18 @@ class DashboardController extends Controller
         ];
     }
 
+    public function show($param) {
+        if($param == "payment") {
+            $result = Payment::select(DB::raw('MONTH(created_at) as labels, SUM(amount) as data'))->whereBetween('created_at', [now()->subYears(1), now()])->groupBy('labels')->get();
+        } else {
+            $model = app('App\Models\\'.Str::ucfirst($param));
+            $result = $model::select(DB::raw('MONTH(created_at) as labels, COUNT(id) as data'))->whereBetween('created_at', [now()->subYears(1), now()])->groupBy('labels')->get();
+        }
+        $chart['labels'] = $result->pluck('labels');
+        $chart['data'] = $result->pluck('data');
+        return [
+            'status' => 'success',
+            'data'   => $chart
+        ];
+    }
 }
