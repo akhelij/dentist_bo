@@ -16,6 +16,9 @@ class Shortcut extends Model
      */
     protected $fillable = [
         'shortcut_content',
+        'type',
         'tenant_id'
     ];
+
+    public $timestamps = false;
 }
