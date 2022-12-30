@@ -26,15 +26,17 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/dashboard/chart/{param}', [DashboardController::class, 'show']);
-Route::get('/patients/all', [PatientController::class, 'all']);
-Route::apiResource('/patients', PatientController::class);
-Route::apiResource('/{patient}/interventions', InterventionController::class)->only('index', 'store');
-Route::apiResource('/interventions', InterventionController::class)->except('index', 'store');
-Route::apiResource('/{intervention}/history',InterventionHistoryController::class)->only('index');
-Route::apiResource('/history', InterventionHistoryController::class)->except('index');
-Route::apiResource('/{intervention}/payments', PaymentController::class)->only('index');
-Route::apiResource('/payments', PaymentController::class)->except('index');
-Route::apiResource('/appointments', AppointmentController::class);
-Route::apiResource('/shortcuts', ShortcutController::class);
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/dashboard/chart/{param}', [DashboardController::class, 'show']);
+    Route::get('/patients/all', [PatientController::class, 'all']);
+    Route::apiResource('/patients', PatientController::class);
+    Route::apiResource('/{patient}/interventions', InterventionController::class)->only('index', 'store');
+    Route::apiResource('/interventions', InterventionController::class)->except('index', 'store');
+    Route::apiResource('/{intervention}/history', InterventionHistoryController::class)->only('index');
+    Route::apiResource('/history', InterventionHistoryController::class)->except('index');
+    Route::apiResource('/{intervention}/payments', PaymentController::class)->only('index');
+    Route::apiResource('/payments', PaymentController::class)->except('index');
+    Route::apiResource('/appointments', AppointmentController::class);
+    Route::apiResource('/shortcuts', ShortcutController::class);
+});
