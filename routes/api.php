@@ -7,6 +7,7 @@ use App\Http\Controllers\InterventionController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\PaymentController;
 use \App\Http\Controllers\ShortcutController;
+use App\Http\Controllers\ThirdPartyApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -40,3 +41,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('/appointments', AppointmentController::class);
     Route::apiResource('/shortcuts', ShortcutController::class);
 });
+
+Route::get('/dwa', [ThirdPartyApiController::class, 'dwa']);
