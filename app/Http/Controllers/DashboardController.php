@@ -22,8 +22,10 @@ class DashboardController extends Controller
     public function index()
     {
         $result = Payment::select(DB::raw('MONTH(created_at) as labels, SUM(amount) as data'))->whereBetween('created_at', [now()->subYears(1), now()])->groupBy('labels')->get();
-        $chart['labels'] = $result->pluck('labels');
-        $chart['data'] = $result->pluck('data');
+        // $chart['labels'] = $result->pluck('labels');
+        // $chart['data'] = $result->pluck('data');
+        $chart['labels'] = array(1, 2, 3, 4);
+        $chart['data'] = array_pad($result->pluck('data')->toArray(), -4, 0);
 
         return [
             'patients_count' => Patient::count(),
