@@ -42,8 +42,10 @@ class DashboardController extends Controller
             $model = app('App\Models\\'.Str::ucfirst($param));
             $result = $model::select(DB::raw('MONTH(created_at) as labels, COUNT(id) as data'))->whereBetween('created_at', [now()->subYears(1), now()])->groupBy('labels')->get();
         }
-        $chart['labels'] = $result->pluck('labels');
-        $chart['data'] = $result->pluck('data');
+        // $chart['labels'] = $result->pluck('labels');
+        // $chart['labels'] = array_pad($result->pluck('labels')->toArray(), -4, 0);
+        $chart['labels'] = array(1, 2, 3, 4);
+        $chart['data'] = array_pad($result->pluck('data')->toArray(), -4, 0);
         return [
             'status' => 'success',
             'data'   => $chart
