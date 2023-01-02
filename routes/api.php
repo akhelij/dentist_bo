@@ -40,6 +40,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('/payments', PaymentController::class)->except('index');
     Route::apiResource('/appointments', AppointmentController::class);
     Route::apiResource('/shortcuts', ShortcutController::class);
+    Route::get('/dwa', [ThirdPartyApiController::class, 'dwa']);
 });
 
-Route::get('/dwa', [ThirdPartyApiController::class, 'dwa']);
