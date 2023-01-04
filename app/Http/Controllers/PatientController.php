@@ -95,4 +95,9 @@ class PatientController extends Controller
     {
         return $patient->delete();
     }
+
+    public function search($name) 
+    {
+      return Patient::where('name', 'like', '%' . $name . '%')->paginate(25);
+    }
 }

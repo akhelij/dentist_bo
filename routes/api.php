@@ -31,6 +31,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/dashboard/chart/{param}', [DashboardController::class, 'show']);
     Route::get('/patients/all', [PatientController::class, 'all']);
+    Route::get('/patients/search/{name}', [PatientController::class, 'search']);
     Route::apiResource('/patients', PatientController::class);
     Route::apiResource('/{patient}/interventions', InterventionController::class)->only('index', 'store');
     Route::apiResource('/interventions', InterventionController::class)->except('index', 'store');
