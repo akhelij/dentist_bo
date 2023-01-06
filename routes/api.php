@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InterventionHistoryController;
 use App\Http\Controllers\InterventionController;
@@ -42,5 +43,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('/appointments', AppointmentController::class);
     Route::apiResource('/shortcuts', ShortcutController::class);
     Route::get('/dwa', [ThirdPartyApiController::class, 'dwa']);
+    Route::post('/change-password', [NewPasswordController::class, 'changePassword']);
 });
 

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Auth\User;
 
 class NewPasswordController extends Controller
 {
@@ -52,4 +53,29 @@ class NewPasswordController extends Controller
 
         return response()->json(['status' => __($status)]);
     }
+
+    public function changePassword(Request $request) {
+        // Get the authenticated user
+        $user = Auth::user();
+
+        // Validate the old password
+        if (!Hash::check($request->input('old_password'), $user->password)) {
+            // Return a 401 error if the old password is incorrect
+            return response()->json(['error' => 'The old password is incorrect'], 401);
+        }
+
+        // Validate the new password
+        $validatedData = $request->validate([
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        // Update the user's password
+        $user->update([
+            'password' => Hash::make($validatedData['password'])
+        ]);
+
+        // Return a success message
+        return response()->json(['message' => 'Your password has been changed']);
+    }
+
 }
