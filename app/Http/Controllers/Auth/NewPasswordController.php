@@ -66,7 +66,7 @@ class NewPasswordController extends Controller
 
         // Validate the new password
         $validatedData = $request->validate([
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
         ]);
 
         // Update the user's password
