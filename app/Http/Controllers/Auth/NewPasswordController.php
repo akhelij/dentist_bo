@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
 
 class NewPasswordController extends Controller
 {
