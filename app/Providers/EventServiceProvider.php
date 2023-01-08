@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Listeners\SetIdTenantInSession;
+use App\Listeners\SaveAuthenticationLogs;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -21,7 +22,8 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         Login::class => [
-            SetIdTenantInSession::class
+            SetIdTenantInSession::class,
+            SaveAuthenticationLogs::class
         ]
     ];
 
