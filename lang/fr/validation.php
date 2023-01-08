@@ -87,6 +87,10 @@ return [
 |
 */
 
-'attributes' => array(),
+'attributes' => array(
+  'name' => 'nom',
+  'password' => 'mot de passe',
+  'shortcut_content' => 'expression',
+),
 
 ]   ;

@@ -35,11 +35,17 @@ class ShortcutController extends Controller
      */
     public function store(Request $request)
     {
-        $shortcut = new Shortcut();
-        $shortcut->shortcut_content = $request->shortcut_content;
-        $shortcut->type = $request->type;
+      $tenant_id = auth()->user()->tenant_id;
 
-        return $shortcut->save();
+      $this->validate($request,[
+        'shortcut_content' => 'required|unique:shortcuts,shortcut_content,NULL,id,tenant_id,' . $tenant_id
+      ]);
+      
+      $shortcut = new Shortcut();
+      $shortcut->shortcut_content = $request->shortcut_content;
+      $shortcut->type = $request->type;
+
+      return $shortcut->save();
     }
 
     /**

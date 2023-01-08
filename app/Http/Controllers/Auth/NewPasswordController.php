@@ -61,7 +61,7 @@ class NewPasswordController extends Controller
         // Validate the old password
         if (!Hash::check($request->input('old_password'), $user->password)) {
             // Return a 401 error if the old password is incorrect
-            return response()->json(['error' => 'The old password is incorrect'], 401);
+            return response()->json(['message' => "l'ancien mot de passe est incorrect"], 401);
         }
 
         // Validate the new password
