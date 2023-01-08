@@ -24,11 +24,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
+Route::middleware(['auth:sanctum', 'check.license'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware(['auth:sanctum'])->group(function () {
+Route::middleware(['auth:sanctum', 'check.license'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::get('/dashboard/chart/{param}', [DashboardController::class, 'show']);
     Route::get('/patients/all', [PatientController::class, 'all']);

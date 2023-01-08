@@ -14,4 +14,10 @@ class Tenant extends Model
         'name',
         'status'
     ];
+
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        $this->save();
+    }
 }
