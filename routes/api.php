@@ -58,7 +58,8 @@ Route::middleware(['auth:sanctum', 'check.license'])->group(function () {
     Route::post('/patients/{patient}/file-upload', [FileController::class,'upload']);
 
     //Settings
-    Route::apiResource('/shortcuts', ShortcutController::class);
+    Route::get('/shortcuts/{type}', [ShortcutController::class, 'index']);
+    Route::post('/shortcuts', [ShortcutController::class, 'store']);
     Route::post('/change-password', [NewPasswordController::class, 'changePassword']);
     Route::get('/dwa', [ThirdPartyApiController::class, 'dwa']);
 });

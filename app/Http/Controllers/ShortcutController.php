@@ -12,9 +12,9 @@ class ShortcutController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($type)
     {
-        return Shortcut::all();
+        return Shortcut::where('type', $type)->get();
     }
 
     /**
@@ -40,7 +40,7 @@ class ShortcutController extends Controller
       $this->validate($request,[
         'shortcut_content' => 'required|unique:shortcuts,shortcut_content,NULL,id,tenant_id,' . $tenant_id
       ]);
-      
+
       $shortcut = new Shortcut();
       $shortcut->shortcut_content = $request->shortcut_content;
       $shortcut->type = $request->type;
